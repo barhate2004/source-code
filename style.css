@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: black;
+}
+nav {
+    width: 100%;
+    height: 10vh;
+    position: sticky;
+}
+.nav-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.logo span {
+    color: grey;
+    text-shadow: 0 0 10px grey;
+}
+.hamburg,
+.cancel {
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: white;
+    display: none;
+    font-size: clamp(2.5rem, 0.5rem + 5vw, 3rem);
+}
+.nav-container .links {
+    display: flex;
+}
+.nav-container .links a {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 550;
+    transition: 0.3s linear;
+}
+.nav-container .links a::before {
+    position: absolute;
+    content: "";
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: grey;
+    transition: 0.2s linear;
+}
+.nav-container .links a:hover::before {
+    width: 100%;
+}
+.nav-container .links a:hover {
+    color: grey;
+}
+.dropdown {
+    z-index: 100;
+    position: absolute;
+    top: 0;
+    transform: translateY(-500px);
+    width: 100%;
+    height: auto;
+    backdrop-filter: blur(4px) brightness(40%);
+    box-shadow: 0 0 20px black;
+    transition: 0.2s linear;
+}
+.dropdown .links a {
+    display: flex;
+    color: white;
+    text-decoration: none;
+    justify-content: center;
+    padding: 15px 0;
+    align-items: center;
+    transition: 0.2s linear;
+}
+.dropdown .links a:hover {
+    background-color: grey;
+}
+section {
+    width: 100%;
+    height: auto; /* Adjusted for better responsiveness */
+    padding: 20px; /* Added padding for better readability */
+}
+.main-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack items vertically on mobile */
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.main-container .image {
+    width: 100%; /* Full width on mobile */
+    max-width: 500px; /* Limit max width */
+    height: auto; /* Auto height for responsiveness */
+    border-radius: 50%;
+    overflow: hidden; /* Hide overflow */
+    box-shadow: 0 0 50px gray;
+    margin-bottom: 20px; /* Space between elements */
+}
+.main-container .image img {
+    width: 100%; /* Ensure image covers container */
+    height: auto; /* Maintain aspect ratio */
+}
+.main-container .image:hover {
+    animation: animate 1.5s ease-in-out infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+.main-container .content {
+    color: white;
+    width: 100%; /* Full width on mobile */
+    text-align: center; /* Center text on mobile */
+}
+.content h1 {
+    font-size: clamp(1rem, 1rem + 5vw, 1.8rem);
+}
+.content h1 span {
+    color: grey;
+    text-shadow: 0 0 10px grey;
+}
+.content .typewriter {
+    font-size: clamp(1rem, 1rem + 5vw, 2.5rem);
+    font-weight: 600;
+}
+.content .typewriter-text {
+    color: grey;
+    text-shadow: 0 0 10px grey;
+}
+.content p {
+    font-size: clamp(0.8rem, 1rem + 1vw, 1rem); /* Adjusted for readability */
+    margin: 10px 0;
+}
+.social-links {
+    display: flex;
+    justify-content: center; /* Center social links */
+}
+.social-links i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: transparent;
+    border: 0.2rem solid grey;
+    border-radius: 50%;
+    color: grey;
+    margin: 5px 15px;
+    font-size: 1.5rem;
+    transition: 0.2s linear;
+}
+.social-links i:hover {
+    transform: scale(1.3);
+    color: black;
+    background-color: grey;
+    filter: drop-shadow(0 0 10px grey);
+}
+.content button {
+    width: 80%; /* Adjusted width for mobile */
+    height: 6vh;
+    margin: 30px auto;
+    background-color: grey;
+    color: white;
+    border: none;
+    outline: none;
+    font-size: 120%;
+    font-weight: 700;
+    border-radius: 5px;
+    transition: 0.2s linear;
+}
+.content button:hover {
+    transform: scale(1.1);
+    color: grey;
+    border: 2px solid grey;
+    background-color: transparent;
+    font-weight: 700;
+    box-shadow: 0 0 40px grey;
+}
+@media (max-width: 884px) {
+    .main-container {
+        flex-direction: column;
+    }
+    nav .logo {
+        position: absolute;
+        top: 16px;
+        left: 15px;
+        font-size: 1.5rem;
+    }
+    .nav-container .links {
+        display: none;
+    }
+    .hamburg,
+    .cancel {
+        display: block;
+    }
+    .social-links i {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+}
+@media (max-width: 440px) {
+    .main-container .image {
+        width: 100%; /* Full width on mobile */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 0px;
+    }
+    .main-container .content {
+        width: 100%;
+    }
+    .main-container button {
+        margin-top: 15px;
+    }
+}
+.about {
+    color: rgb(162, 162, 185);
+    height: auto;
+    padding: 20px; /* Added padding for better readability */
+}
+.skills {
+    color: white;
+}
+.webdev {
+    padding: 20px; /* Added padding for better readability */
+    background-color: #444;
+    height: auto;
+    border: 5px solid #666;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.webdev:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 5px 7px 10px rgba(0, 0, 0, 0.3);
+    background-color: #555;
+    border-color: #888;
+}
+
+.webdev > * {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.8;
+}
+
+.webdev:hover > * {
+    transform: scale(1.1);
+    opacity: 1;
+}
+
+.webdev::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.1), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.webdev:hover::before {
+    opacity: 1;
+}
+
+.webdev::after {
+    content: '';
+    position: absolute;
+    top: -10px; /* Match border width */
+    left: -5px;
+    width: calc
+}
+
+    @keyframes rotateBorder {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+    
+    /* Basic container for the services section */
+    .services-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+        gap: 2rem; /* Spacing between items */
+        padding: 2rem; /* Padding around the container */
+        justify-content: center; /* Center the grid horizontally */
+    }
+    
+    /* Style for individual service boxes */
+    .service-box {
+        background-color: #fff; /* White background */
+        border-radius: 0.5rem; /* Rounded corners */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        padding: 2rem; /* Padding inside the box */
+        text-align: center; /* Center text within the box */
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Smooth transitions */
+        border: 1px solid #eee; /* Light gray border */
+    }
+    
+    .service-box:hover {
+        transform: translateY(-5px); /* Move up on hover */
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+    }
+    
+    /* Style for the icons */
+    .service-icon {
+        font-size: 3rem; /* Adjust icon size */
+        margin-bottom: 1rem; /* Space between icon and heading */
+        color: #007bff; /* Example icon color (blue) - Change as needed*/
+    }
+    
+    /* Style for the headings */
+    .service-heading {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        color: #333; /* Dark gray heading color */
+    }
+    
+    /* Style for the descriptions */
+    .service-description {
+        font-size: 0.9rem;
+        color: #666; /* Slightly lighter text color */
+        line-height: 1.4; /* Improve readability */
+    }
+    
+    /* Example media query for smaller screens */
+    @media (max-width: 768px) {
+        .services-container {
+            grid-template-columns: repeat(1, 1fr); /* Stack on smaller screens */
+        }
+    }
+    
+    

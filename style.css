@@ -109,20 +109,21 @@ section {
     padding: 20px;
 }
 .main-container .image {
-    width: 100%; /* Full width on mobile */
-    max-width: 500px; /* Limit max width */
-    height: auto; /* Auto height for responsiveness */
-    border-radius: 50%;
+    width: 1000%; /* Full width on mobile */
+    max-width: 300px; /* Limit max width */
+    height: 350px; /* Auto height for responsiveness */
+    border-radius: 80%;
     overflow: hidden; /* Hide overflow */
     box-shadow: 0 0 50px gray;
     margin-bottom: 20px; /* Space between elements */
 }
 .main-container .image img {
-    width: 100%; /* Ensure image covers container */
-    height: auto; /* Maintain aspect ratio */
+    width: 110%;
+    height:auto; /* Ensure image covers container */
+    height: hidden; /* Maintain aspect ratio */
 }
 .main-container .image:hover {
-    animation: animate 1.5s ease-in-out infinite;
+    animation: animate 1s ease-in-out infinite;
 }
 
 @keyframes animate {

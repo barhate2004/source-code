@@ -316,9 +316,6 @@ section {
     }
     
     /* Basic container for the services section */
-.skills{
-    height:300px;
-}
     .services-container {
         display: grid;
         height:300px;

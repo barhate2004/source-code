@@ -118,7 +118,7 @@ section {
     margin-bottom: 20px; /* Space between elements */
 }
 .main-container .image img {
-    width: 110%;
+    width: 210%;
     height:auto; /* Ensure image covers container */
     height: hidden; /* Maintain aspect ratio */
 }
@@ -371,6 +371,7 @@ section {
     }
     
     
+
 
 
 

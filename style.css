@@ -98,10 +98,10 @@ nav {
 section {
     width: 100%;
     height: auto; /* Adjusted for better responsiveness */
-    padding: 20px; /* Added padding for better readability */
+    padding: 30px; /* Added padding for better readability */
 }
 .main-container {
-    width: 100%;
+    
     display: flex;
     flex-direction: column; /* Stack items vertically on mobile */
     justify-content: center;
@@ -112,15 +112,15 @@ section {
     width: 1000%; /* Full width on mobile */
     max-width: 300px; /* Limit max width */
     height: 350px; /* Auto height for responsiveness */
-    border-radius: 80%;
+    border-radius: 100%;
     overflow: hidden; /* Hide overflow */
     box-shadow: 0 0 50px gray;
     margin-bottom: 20px; /* Space between elements */
 }
 .main-container .image img {
-    width: 210%;
+    width: 100%;
     height:auto; /* Ensure image covers container */
-    height: hidden; /* Maintain aspect ratio */
+    height: flex; /* Maintain aspect ratio */
 }
 .main-container .image:hover {
     animation: animate 1s ease-in-out infinite;
@@ -229,7 +229,7 @@ section {
         font-size: 1.5rem;
     }
 }
-@media (max-width: 440px) {
+@media (max-width: 1000px) {
     .main-container .image {
         width: 100%; /* Full width on mobile */
         height: auto; /* Maintain aspect ratio */
@@ -348,6 +348,7 @@ section {
         color: #007bff; /* Example icon color (blue) - Change as needed*/
     }
     
+    
     /* Style for the headings */
     .service-heading {
         font-size: 1.2rem;
@@ -362,6 +363,7 @@ section {
         color: #666; /* Slightly lighter text color */
         line-height: 1.4; /* Improve readability */
     }
+    
     
     /* Example media query for smaller screens */
     @media (max-width: 768px) {

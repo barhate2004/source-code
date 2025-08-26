@@ -110,7 +110,7 @@ section {
 }
 .main-container .image {
     width: 1000%; /* Full width on mobile */
-    max-width: 200px; /* Limit max width */
+    max-width: 350px; /* Limit max width */
     height: 350px; /* Auto height for responsiveness */
     border-radius: 80%;
     overflow: hidden; /* Hide overflow */
@@ -371,6 +371,7 @@ section {
     }
     
     
+
 
 
 
